@@ -18,9 +18,9 @@ const float EXAMPLE_CONSTANT                = 8.4f;
 const float EXAMPLE_CONSTANT_2              = 7.0f;
 
 // CLASSES ---------------------------------------------------
-class ExampleClass{
+class ExampleClass {
 public:
-	ExampleStruct(int param1);
+	ExampleClass(int param1);
 	void exampleMethod1();
 	void exampleMethod2(int param1, int param2);
 	DigitalOut exampleD1;

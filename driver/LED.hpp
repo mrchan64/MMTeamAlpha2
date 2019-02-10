@@ -1,26 +1,26 @@
 /***********************************************************************
  *                                                                     *
- *   This FILE sets up the LEDs and Voltmeter used in the Micromouse   *
+ *   This FILE sets up the LEDs in the Micromouse                      *
  *                                                                     *
- *   Author: MATTHEW CHAN                                              *
+ *   Author: DUY PHAM                                                  *
  *   Date: 2/10/2019                                                   *
- *   CPP File
  *                                                                     *
  ***********************************************************************/
 
 #include "mbed.h"
-#include "example.hpp"
+#include "pinnames.hpp"
 
-ExampleClass::ExampleClass(int param1): exampleD1(param1) {}
+#ifndef LED_H
+#define LED_H
 
-void ExampleClass::exampleMethod1() {
-  //do something
-}
+DigitalOut LED1();
+DigitalOut LED2(PB_13);
+DigitalOut LED3(PB_14);
+DigitalOut LED4(PB_15);
+DigitalOut LED5(PC_6);
 
-void ExampleClass::exampleMethod2(int param1, int param2) {
-  //do something
-}
+void binaryLED(int num);
+void stateLED(int num);
+void allOffLED();
 
-void exampleExternalMethod1(float param1) {
-  // do something
-}
+#endif
