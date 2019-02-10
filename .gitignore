@@ -1,0 +1,6 @@
+/BUILD
+/mbed
+/*.html
+*.bld
+.mbed
+mbed_config.h
