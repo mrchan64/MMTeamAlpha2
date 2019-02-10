@@ -5,8 +5,11 @@ This is the repository for UCSD IEEE Micromouse Team Alpha 2 run by Ajay Booter,
 ## Writing Code
 
 ```main.cpp``` contains the main code. Add you additional files to the main file using ```#include<file>``` and call the functions in your code.
+
 ```\drivers``` will contain all of the driver code.  This is code that interfaces directly with the Mouse subsystems thems (e.g. Motor driving, LED driving, etc.).
+
 ```\algo``` will contain all of the code for managin the maze algorithm.
+
 ```\lib``` will contain all the code to run the full mouse.
 
 Make sure that you create both a ```.hpp``` file and a ```.cpp``` file when you are writing your code.  The ```.cpp``` file only needs to include your ```.hpp``` file and put all your other include statements inside the ```.hpp``` file.  Be sure to give the ```IFNDEF``` command in the ```.hpp``` file a unique name when you copy paste it.
