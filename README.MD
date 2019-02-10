@@ -26,3 +26,21 @@ To compile the code, follow these steps:
 
 To make sure that we are all on the same page, we will be using Git and Github to do version control.  To clone this repository use:
 ```git clone https://github.com/mrchan64/MMTeamAlpha2.git```
+When writing new code, make sure that the first thing you do is checkout to a new branch because you will NOT be able to pus to master:
+```git checkout -b branchName```
+When you have code you want to save:
+```git add .```
+```git commit -m "commit message"```
+You can check the status of what you have committed and what has changed since your last commit:
+```git status```
+When you have something you want to push:
+```git push -u origin branchName```
+Finally, after your pull request has gone through on Github, make sure to go back to the master branch:
+```git checkout master```
+```git pull```
+You can also see all your branches or delete a branch:
+```git branch```
+```git branch -D branchName```
+Unstage all your added files:
+```git reset```
+If you have any issues, just push your code to a new branch and ask for help to resolve merge conflicts.
