@@ -7,9 +7,8 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
-#include "pinnames.h"
-#include "LED.h"
+#include "../driver/LED.hpp"
 
 int main() {
-  // binaryLED(11111);
+  allOffLED();
 }
