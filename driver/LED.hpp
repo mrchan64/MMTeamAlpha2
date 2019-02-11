@@ -21,6 +21,7 @@ DigitalOut LED5(LED_5_PIN);
 
 void setLED(int id, boolean ledState);
 void binaryLED(int num);
+void counterLED(int num);
 void allOffLED();
 
 #endif
