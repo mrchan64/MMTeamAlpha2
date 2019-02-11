@@ -14,11 +14,6 @@
 #define LED_H
 
 //LED pins
-DigitalOut led1(LED_1_PIN);
-DigitalOut led2(LED_2_PIN);
-DigitalOut led3(LED_3_PIN);
-DigitalOut led4(LED_4_PIN);
-DigitalOut led5(LED_5_PIN);
 
 /** Sets specified LED on (ledValue = 1) or off (ledValue = 0)
  *
