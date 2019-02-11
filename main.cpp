@@ -7,7 +7,7 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
-#include "../driver/LED.hpp"
+#include "driver/LED.hpp"
 
 int main() {
   allOffLED();
