@@ -47,3 +47,5 @@ const PinName RX_PIN 		 = PC_11;
 //I2C Sensors --------------------------------------------
 const PinName SDA_PIN			 = PB_9;
 const PinName SCK_PIN			 = PB_8;
+
+#endif
