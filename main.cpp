@@ -7,6 +7,7 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
+#include "pinnames.h"
 #include "LED.h"
 
 int main() {
