@@ -9,8 +9,16 @@
  ***********************************************************************/
 
  #include "mbed.h"
- #include "LED.hpp"
+ #include "LED.h"
 
- binaryLED(int num) {
+ void binaryLED(int num) {
 
  }
+
+void stateLED(int num) {
+
+}
+
+void allOffLED() {
+  
+}
