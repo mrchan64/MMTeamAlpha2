@@ -19,8 +19,8 @@ DigitalOut LED3(LED_3_PIN);
 DigitalOut LED4(LED_4_PIN);
 DigitalOut LED5(LED_5_PIN);
 
+void setLED(int id, boolean ledState);
 void binaryLED(int num);
-void stateLED(int num);
 void allOffLED();
 
 #endif
