@@ -4,11 +4,11 @@
 *                                                                     *
 *   Author: DUY PHAM                                                  *
 *   Date: 2/10/2019                                                   *
-*   CPP File                                                          *                                                       *
+*   CPP File                                                          *
 *                                                                     *
 ***********************************************************************/
 
-#include <string>
+// #include <string>
 #include "mbed.h"
 #include "LED.hpp"
 
