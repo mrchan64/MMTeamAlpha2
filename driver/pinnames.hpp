@@ -24,7 +24,7 @@ const PinName LED_1_PIN 			 = PB_12;
 const PinName LED_2_PIN 			 = PB_13;
 const PinName LED_3_PIN 			 = PB_14;
 const PinName LED_4_PIN 			 = PB_15;
-const PinName LED_5_PIN 			 = PB_16;
+const PinName LED_5_PIN 			 = PB_6;
 
 //INFRARED ------------------------------------------------
 //L
