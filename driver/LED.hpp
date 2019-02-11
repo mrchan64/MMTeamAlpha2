@@ -8,16 +8,16 @@
  ***********************************************************************/
 
 #include "mbed.h"
-#include "pinnames.hpp"
+#include "pinnames.h"
 
 #ifndef LED_H
 #define LED_H
 
-DigitalOut LED1();
-DigitalOut LED2(PB_13);
-DigitalOut LED3(PB_14);
-DigitalOut LED4(PB_15);
-DigitalOut LED5(PC_6);
+DigitalOut LED1(LED_1_PIN);
+DigitalOut LED2(LED_2_PIN);
+DigitalOut LED3(LED_3_PIN);
+DigitalOut LED4(LED_4_PIN);
+DigitalOut LED5(LED_5_PIN);
 
 void binaryLED(int num);
 void stateLED(int num);
