@@ -10,5 +10,5 @@
 #include "LED.h"
 
 int main() {
-  binaryLED(11111);
+  // binaryLED(11111);
 }
