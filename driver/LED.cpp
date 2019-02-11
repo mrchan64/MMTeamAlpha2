@@ -8,9 +8,13 @@
 *                                                                     *
 ***********************************************************************/
 
-// #include <string>
+#include <iostream>
+#include <sstream>
+#include <string>
 #include "mbed.h"
 #include "LED.hpp"
+
+using namespace std;
 
 DigitalOut led1(LED_1_PIN);
 DigitalOut led2(LED_2_PIN);
@@ -19,6 +23,8 @@ DigitalOut led4(LED_4_PIN);
 DigitalOut led5(LED_5_PIN);
 
 void setLED(int id, int ledValue) {
+  cout << "setting LED" << id << "to" << ledValue << endl;
+
   switch (id) {
     case 1:
     led1 = ledValue;
@@ -39,12 +45,14 @@ void setLED(int id, int ledValue) {
 }
 
 void binaryLED(int num) {
-  // std::string numString = std::to_string(num);
-  // led1 = numString.at(0);
-  // led2 = numString.at(1);
-  // led3 = numString.at(2);
-  // led4 = numString.at(3);
-  // led5 = numString.at(4);
+  ostringstream stream;
+  stream << num;
+  string numString = stream.str();
+  setLED(1, numString.at(0));
+  setLED(2, numString.at(1));
+  setLED(3, numString.at(2));
+  setLED(4, numString.at(3));
+  setLED(5, numString.at(4));
 }
 
 void counterLED(int num) {
@@ -52,9 +60,9 @@ void counterLED(int num) {
 }
 
 void allOffLED() {
-  led1 = 0;
-  led2 = 0;
-  led3 = 0;
-  led4 = 0;
-  led5 = 0;
+  setLED(1, 0);
+  setLED(2, 0);
+  setLED(3, 0);
+  setLED(4, 0);
+  setLED(5, 0);
 }
