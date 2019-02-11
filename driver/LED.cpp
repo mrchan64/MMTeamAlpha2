@@ -13,11 +13,10 @@
 #include "mbed.h"
 #include "LED.h"
 
-void setLED(int id, boolean ledState) {
-  int ledValue = (ledState) ? 1 : 0;
+void setLED(int id, int ledValue) {
   switch (id) {
     case 1:
-    LED1 ledValue);
+    LED1.write(ledValue);
     break;
     case 2:
     LED2.write(ledValue);
@@ -44,7 +43,7 @@ void binaryLED(int num) {
 }
 
 void counterLED(int num) {
-  
+
 }
 
 void allOffLED() {
