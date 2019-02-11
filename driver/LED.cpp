@@ -11,6 +11,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <bitset>
 #include "mbed.h"
 #include "LED.hpp"
 
@@ -56,7 +57,8 @@ void binaryLED(int num) {
 }
 
 void counterLED(int num) {
-
+  string binary = bitset<NUM_LEDS>(num).to_string();
+  binaryLED(binary);
 }
 
 void allOffLED() {

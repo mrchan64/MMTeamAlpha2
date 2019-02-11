@@ -13,6 +13,8 @@
 #ifndef LED_H
 #define LED_H
 
+const NUM_LEDS = 5;
+
 /** Sets specified LED on (ledValue = 1) or off (ledValue = 0)
  *
  */
@@ -24,7 +26,8 @@ void setLED(int id, int ledValue);
 void binaryLED(int num);
 
 /** Sets all LEDs to display a decimal number in binary format. For example,
- *  3 turns off all LEDs except the last two (00011).
+ *  3 turns off all LEDs except the last two (00011). The biggest number this
+ *  method can display is 31 (11111).
  */
 void counterLED(int num);
 
