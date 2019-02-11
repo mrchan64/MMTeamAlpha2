@@ -9,37 +9,36 @@
 ***********************************************************************/
 
 #include <string>
-
 #include "mbed.h"
-#include "LED.h"
+#include "LED.hpp"
 
 void setLED(int id, int ledValue) {
   switch (id) {
     case 1:
-    LED1.write(ledValue);
+    led1 = ledValue;
     break;
     case 2:
-    LED2.write(ledValue);
+    led2 = ledValue;
     break;
     case 3:
-    LED3.write(ledValue);
+    led3 = ledValue;
     break;
     case 4:
-    LED4.write(ledValue);
+    led4 = ledValue;
     break;
     case 5:
-    LED5.write(ledValue);
+    led5 = ledValue;
     break;
   }
 }
 
 void binaryLED(int num) {
-  string numString = std::to_string(num);
-  LED1.write(numString.at(0));
-  LED2.write(numString.at(1));
-  LED3.write(numString.at(2));
-  LED4.write(numString.at(3));
-  LED5.write(numString.at(4));
+  // std::string numString = std::to_string(num);
+  // led1 = numString.at(0);
+  // led2 = numString.at(1);
+  // led3 = numString.at(2);
+  // led4 = numString.at(3);
+  // led5 = numString.at(4);
 }
 
 void counterLED(int num) {
@@ -47,9 +46,9 @@ void counterLED(int num) {
 }
 
 void allOffLED() {
-  LED1.write(0);
-  LED2.write(0);
-  LED3.write(0);
-  LED4.write(0);
-  LED5.write(0);
+  led1 = 0;
+  led2 = 0;
+  led3 = 0;
+  led4 = 0;
+  led5 = 0;
 }
