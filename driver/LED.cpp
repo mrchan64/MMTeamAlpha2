@@ -1,6 +1,6 @@
 /***********************************************************************
 *                                                                     *
-*   This FILE allows for the control of the LEDs in the micromouse.  *
+*   This FILE allows for the control of the LEDs in the Micromouse.  *
 *                                                                     *
 *   Author: DUY PHAM                                                  *
 *   Date: 2/10/2019                                                   *
