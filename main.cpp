@@ -10,5 +10,5 @@
 #include "driver/LED.hpp"
 
 int main() {
-  allOffLED();
+  counterLED(20);
 }

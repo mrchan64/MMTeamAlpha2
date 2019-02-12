@@ -48,16 +48,19 @@ void setLED(int id, int ledValue) {
 void binaryLED(int num) {
   ostringstream stream;
   stream << num;
-  string numString = stream.str();
-  setLED(1, numString.at(0));
-  setLED(2, numString.at(1));
-  setLED(3, numString.at(2));
-  setLED(4, numString.at(3));
-  setLED(5, numString.at(4));
+  string numStr = stream.str();
+  setLED(1, numStr.at(0));
+  setLED(2, numStr.at(1));
+  setLED(3, numStr.at(2));
+  setLED(4, numStr.at(3));
+  setLED(5, numStr.at(4));
 }
 
 void counterLED(int num) {
-  string binary = bitset<NUM_LEDS>(num).to_string();
+  string binaryStr = bitset<NUM_LEDS>(num).to_string();
+  stringstream stream(binaryStr);
+  int binary = 0;
+  stream >> binary;
   binaryLED(binary);
 }
 

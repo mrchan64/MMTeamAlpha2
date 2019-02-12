@@ -13,7 +13,7 @@
 #ifndef LED_H
 #define LED_H
 
-const NUM_LEDS = 5;
+const int NUM_LEDS = 5;
 
 /** Sets specified LED on (ledValue = 1) or off (ledValue = 0)
  *
