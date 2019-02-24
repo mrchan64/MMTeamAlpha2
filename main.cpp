@@ -7,6 +7,7 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
+#include "driver/serial.hpp"
 
 int main() {
   

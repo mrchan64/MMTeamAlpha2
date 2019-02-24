@@ -14,17 +14,17 @@
 #define PINNAME_H
 
 // MOTORS -------------------------------------------------
-const PinName ML1            = PA_2;
-const PinName ML2            = PA_3;
-const PinName MR1            = PB_6;
-const PinName MR2            = PB_7;
+const PinName MOTOR_L1_PIN		= PA_2;
+const PinName MOTOR_L2_PIN		= PA_3;
+const PinName MOTOR_R1_PIN		= PB_6;
+const PinName MOTOR_R2_PIN		= PB_7;
 
 //LEDS ----------------------------------------------------
-const PinName LED1 			 = PB_12;
-const PinName LED2 			 = PB_13;
-const PinName LED3 			 = PB_14;
-const PinName LED4 			 = PB_15;
-const PinName LED5 			 = PB_16;
+const PinName LED_1_PIN			 = PB_12;
+const PinName LED_2_PIN			 = PB_13;
+const PinName LED_3_PIN			 = PB_14;
+const PinName LED_4_PIN			 = PB_15;
+const PinName LED_5_PIN			 = PB_6;
 
 //INFRARED ------------------------------------------------
 //L
@@ -47,4 +47,4 @@ const PinName Rxpin 		 = PC_11;
 //I2C Sensors --------------------------------------------
 const PinName SDA			 = PB_9;
 const PinName SCK			 = PB_8;
-
+#endif

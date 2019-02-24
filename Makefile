@@ -48,6 +48,7 @@ PROJECT := MMTeamAlpha2Build
 
 # add objects here as you write them
 # OBJECTS += lib/QEI.o
+OBJECTS += driver/serial.o 
 OBJECTS += main.o
 
  SYS_OBJECTS += mbed/TARGET_NUCLEO_F446RE/TOOLCHAIN_GCC_ARM/hal_tick_overrides.o
