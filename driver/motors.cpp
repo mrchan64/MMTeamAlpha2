@@ -17,7 +17,7 @@ AnalogOut motorL2(MOTOR_L2_PIN);
 AnalogOut motorR1(MOTOR_R1_PIN);
 AnalogOut motorR2(MOTOR_R2_PIN);
 
-void setMotorL(int input) {
+void setMotorL(float input) {
   if (input > 0) {
     motorL1.write(input);
     motorL2.write(0);
@@ -27,7 +27,7 @@ void setMotorL(int input) {
   }
 }
 
-void setMotorR(int input) {
+void setMotorR(float input) {
   if (input > 0) {
     motorR1.write(input);
     motorR2.write(0);
