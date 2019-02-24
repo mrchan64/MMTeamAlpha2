@@ -7,6 +7,7 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
+#include "motors.h"
 
 int main() {
 
