@@ -12,7 +12,27 @@
  #include "mbed.h"
  #include "motors.hpp"
 
-AnalogOut motorl1(MOTOR_L1_PIN);
+AnalogOut motorL1(MOTOR_L1_PIN);
 AnalogOut motorL2(MOTOR_L2_PIN);
 AnalogOut motorR1(MOTOR_R1_PIN);
 AnalogOut motorR2(MOTOR_R2_PIN);
+
+void setMotorL(int input) {
+  if (input > 0) {
+    motorL1.write(input);
+    motorL2.write(0);
+  } else {
+    motorL1.write(0);
+    motorL2.write(-input);
+  }
+}
+
+void setMotorR(int input) {
+  if (input > 0) {
+    motorR1.write(input);
+    motorR2.write(0);
+  } else {
+    motorR1.write(0);
+    motorR2.write(-input);
+  }
+}
