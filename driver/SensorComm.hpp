@@ -5,29 +5,29 @@
 #include "pinnames.hpp"
 
 // I2C ADDRESSES ---------------------
-const char GRYO_ADDR		= ;
-const char ACCEL_ADDR		= ;
-const char GYRO_I2C_ID		= ;
-const char ACCEL_I2C_ID		= ;
+const char GRYO_ADDR		= 0xD6;
+const char ACCEL_ADDR		= 0x32;
+const char GYRO_I2C_ID		= 0xD7;
+const char ACCEL_I2C_ID		= 0x33;
 
 
 // I2C REGISTERS ---------------------
-const char GYRO_CHIP_ID 	= ;
-const char GYRO_CTRL_1		= ;
-const char GYRO_CTRL_4		= ;
-const char GYRO_X_LOW 		= ;
-const char GYRO_X_HIGH		= ; 
-const char GYRO_Y_LOW		= ;
-const char GYRO_Y_HIGH		= ;
-const char GYRO_Z_LOW		= ;
-const char GYRO_Z_HIGH		= ;
+const char GYRO_CHIP_ID 	= 0x0F;
+const char GYRO_CTRL_1		= 0x20;
+const char GYRO_CTRL_4		= 0x23;
+const char GYRO_X_LOW 		= 0x28;
+const char GYRO_X_HIGH		= 0x29; 
+const char GYRO_Y_LOW		= 0x2A;
+const char GYRO_Y_HIGH		= 0x2B;
+const char GYRO_Z_LOW		= 0x2C;
+const char GYRO_Z_HIGH		= 0x2D;
 
-const char ACCEL_CHIP_ID 	= ; 
-const char ACCEL_CTRL_1		= ;
-const char ACCEL_CTRL_4		= ; 
-const char ACCEL_X_H		= ;
-const char ACCEL_Y_H		= ; 
-const char ACCEL_Z_H		= ;
+const char ACCEL_CHIP_ID 	= 0x0F; 
+const char ACCEL_CTRL_1		= 0x20;
+const char ACCEL_CTRL_4		= 0x23; 
+const char ACCEL_X_H		= 0x29;
+const char ACCEL_Y_H		= 0x2B; 
+const char ACCEL_Z_H		= 0x2D;
 
 
 // GRYO CONSTANTS --------------------
