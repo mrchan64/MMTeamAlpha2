@@ -51,6 +51,7 @@ PROJECT := MMTeamAlpha2Build
 OBJECTS += driver/serial.o 
 OBJECTS += driver/motors.o
 OBJECTS += driver/LED.o
+OBJECTS += algorithm/movement_states.o
 OBJECTS += main.o
 
  SYS_OBJECTS += mbed/TARGET_NUCLEO_F446RE/TOOLCHAIN_GCC_ARM/hal_tick_overrides.o
