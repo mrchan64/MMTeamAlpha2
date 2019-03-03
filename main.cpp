@@ -7,7 +7,8 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
+#include "driver/LED.hpp"
 
 int main() {
-  
+  counterLED(20);
 }
