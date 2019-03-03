@@ -8,11 +8,8 @@
 *                                                                     *
 ***********************************************************************/
 
-#include <bitset>
 #include "mbed.h"
 #include "LED.hpp"
-
-using namespace std;
 
 DigitalOut led1(LED_1_PIN);
 DigitalOut led2(LED_2_PIN);
@@ -21,8 +18,6 @@ DigitalOut led4(LED_4_PIN);
 DigitalOut led5(LED_5_PIN);
 
 void setLED(int id, int ledValue) {
-  cout << "setting LED" << id << "to" << ledValue << endl;
-
   switch (id) {
     case 1:
     led1 = ledValue;
