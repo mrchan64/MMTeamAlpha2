@@ -77,7 +77,7 @@ void turnLeft() {
 }
 
 void turnRight() {
-  if (false) { //chcek to see if we have it -90 degrees
+  if (false) { // check to see if we have it -90 degrees
     // update orientation
     // check and update walls
     movementState = FORWARD_2;
