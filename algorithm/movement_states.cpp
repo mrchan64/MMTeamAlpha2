@@ -11,7 +11,36 @@
  #include "mbed.h"
  #include "movement_states.hpp"
 
-MOVEMENT_STATE movementState = START;
+ movementState = START;
+
+ void runMovementStates() {
+   switch (movementState) {
+     case START:
+       start();
+       break;
+     case FORWARD_1:
+       forward1();
+       break;
+     case UNSURE:
+       unsure();
+       break;
+     case FORWARD_2:
+       forward2();
+       break;
+     case FORWARD_3:
+       forward3();
+       break;
+     case TURN_LEFT:
+       turnLeft();
+       break;
+     case TURN_RIGHT:
+       turnRight();
+       break;
+     case TURN_180:
+       turn180();
+       break;
+   }
+ }
 
 void start() {
   if (false)  //check if wall if front
