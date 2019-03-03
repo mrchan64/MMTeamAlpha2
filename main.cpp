@@ -6,9 +6,10 @@
 
 // AUTHOR: Matthew Chan
 
-#include "mbed.h"
 #include "driver/serial.hpp"
+#include "driver/motors.hpp"
+#include "driver/LED.hpp"
 
 int main() {
-  
+  counterLED(20);
 }

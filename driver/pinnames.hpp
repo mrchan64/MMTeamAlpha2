@@ -28,23 +28,24 @@ const PinName LED_5_PIN			 = PB_6;
 
 //INFRARED ------------------------------------------------
 //L
-const PinName IR_LED_L 		 = PC_5;
-const PinName IR_REC_L 		 = PC_3;
+const PinName IR_LED_L_PIN 		 = PC_5;
+const PinName IR_REC_L_PIN 		 = PC_3;
 //FL
-const PinName IR_LED_FL		 = PC_4;
-const PinName IR_REC_FL 	 = PC_2;
+const PinName IR_LED_FL_PIN		 = PC_4;
+const PinName IR_REC_FL_PIN 	 = PC_2;
 //R
-const PinName IR_LED_R 		 = PC_10;
-const PinName IR_REC_R 		 = PC_0;
+const PinName IR_LED_R_PIN 		 = PC_10;
+const PinName IR_REC_R_PIN 		 = PC_0;
 //FR
-const PinName IR_LED_FR		 = PC_11;
-const PinName IR_REC_FR 	 = PC_1;
+const PinName IR_LED_FR_PIN		 = PC_11;
+const PinName IR_REC_FR_PIN 	 = PC_1;
 
 //SERIAL COMM --------------------------------------------
-const PinName Txpin 		 = PC_10;
-const PinName Rxpin 		 = PC_11;
+const PinName TX_PIN 		 = PC_10;
+const PinName RX_PIN 		 = PC_11;
 
 //I2C Sensors --------------------------------------------
-const PinName SDA			 = PB_9;
-const PinName SCK			 = PB_8;
+const PinName SDA_PIN			 = PB_9;
+const PinName SCK_PIN			 = PB_8;
+
 #endif
