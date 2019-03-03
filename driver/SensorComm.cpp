@@ -1,5 +1,9 @@
 #include "SensorComm.hpp"
 
+#include "mbed.h"
+#include "pinnames.hpp"
+
+
 // OBJECTS -------------------------
 I2C i2c(M_I2C_SDA, M_I2C_SCL);
 DigitalOut gryo_led(LED_GYRO);
