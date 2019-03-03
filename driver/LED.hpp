@@ -1,6 +1,6 @@
 /***********************************************************************
  *                                                                     *
- *   This FILE sets up the LEDs in the Micromouse                      *
+ *   This FILE allows for the control of the LEDs in the Micromouse.   *
  *                                                                     *
  *   Author: DUY PHAM                                                  *
  *   Date: 2/10/2019                                                   *
@@ -13,14 +13,26 @@
 #ifndef LED_H
 #define LED_H
 
-DigitalOut LED1();
-DigitalOut LED2(PB_13);
-DigitalOut LED3(PB_14);
-DigitalOut LED4(PB_15);
-DigitalOut LED5(PC_6);
+const int NUM_LEDS = 5;
 
+/** Sets specified LED on (ledValue = 1) or off (ledValue = 0)
+ *
+ */
+void setLED(int id, int ledValue);
+
+/** Sets all LEDs to display the binary number. For example, 00000 turns off
+ *  all LEDs and 11111 turns on all LEDs.
+ */
 void binaryLED(int num);
-void stateLED(int num);
+
+/** Sets all LEDs to display a decimal number in binary format. For example,
+ *  3 turns off all LEDs except the last two (00011). The biggest number this
+ *  method can display is 31 (11111).
+ */
+void counterLED(int num);
+
+/** turns off all LEDs
+ */
 void allOffLED();
 
 #endif
