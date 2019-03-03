@@ -11,7 +11,7 @@
  #include "mbed.h"
  #include "movement_states.hpp"
 
- movementState = START;
+ MOVEMENT_STATE movementState = START;
 
  void runMovementStates() {
    switch (movementState) {

@@ -10,8 +10,6 @@
 #ifndef MOVEMENT_STATE_H
 #define MOVEMENT_STATE_H
 
-extern MOVEMENT_STATE movementState;
-
 enum MOVEMENT_STATE {
   START,
   FORWARD_1,
@@ -22,6 +20,8 @@ enum MOVEMENT_STATE {
   TURN_RIGHT,
   TURN_180,
 };
+
+extern MOVEMENT_STATE movementState;
 
 void runMovementStates();
 void start();
