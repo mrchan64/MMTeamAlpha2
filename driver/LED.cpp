@@ -8,9 +8,6 @@
 *                                                                     *
 ***********************************************************************/
 
-#include <iostream>
-#include <sstream>
-#include <string>
 #include <bitset>
 #include "mbed.h"
 #include "LED.hpp"
@@ -46,22 +43,19 @@ void setLED(int id, int ledValue) {
 }
 
 void binaryLED(int num) {
-  ostringstream stream;
-  stream << num;
-  string numStr = stream.str();
-  setLED(1, numStr.at(0));
-  setLED(2, numStr.at(1));
-  setLED(3, numStr.at(2));
-  setLED(4, numStr.at(3));
-  setLED(5, numStr.at(4));
+  setLED(1, num % 10);
+  setLED(2, num / 10 % 10);
+  setLED(3, num / 100 % 10);
+  setLED(4, num / 1000 % 10);
+  setLED(5, num / 10000 % 10);
 }
 
 void counterLED(int num) {
-  string binaryStr = bitset<NUM_LEDS>(num).to_string();
-  stringstream stream(binaryStr);
-  int binary = 0;
-  stream >> binary;
-  binaryLED(binary);
+  setLED(1, (num >> 4) % 2);
+  setLED(2, (num >> 3) % 2);
+  setLED(3, (num >> 2) % 2);
+  setLED(4, (num >> 1) % 2);
+  setLED(5, num % 2);
 }
 
 void allOffLED() {
