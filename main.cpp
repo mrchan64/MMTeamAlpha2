@@ -9,6 +9,7 @@
 #include "mbed.h"
 #include "driver/serial.hpp"
 #include "driver/motors.hpp"
+#include "driver/encoders.hpp"
 #include "driver/LED.hpp"
 #include "algorithm/movement_states.hpp"
 
@@ -22,4 +23,6 @@ int main() {
   // algorithm states
 
   runMovementStates();
+
+  resetEncoders();
 }
