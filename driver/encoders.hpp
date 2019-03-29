@@ -40,8 +40,8 @@
 #ifndef ENCODERS_H
 #define ENCODERS_H
 
-int pulseCountLeft;   // pulse count for the left encoder
-int pulseCountRight;  // pulse count for the right encoder
+extern int pulseCountLeft;   // pulse count for the left encoder
+extern int pulseCountRight;  // pulse count for the right encoder
 
 // Reset the count of both left and right encoders
 void resetEncoders();

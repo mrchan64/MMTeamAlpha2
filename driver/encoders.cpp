@@ -11,6 +11,9 @@
 #include "mbed.h"
 #include "encoders.hpp"
 
+int pulseCountLeft;
+int pulseCountRight;
+
 InterruptIn encoderLeftA(ENC_L_A_PIN);
 InterruptIn encoderLeftB(ENC_L_B_PIN);
 InterruptIn encoderRightA(ENC_R_A_PIN);
