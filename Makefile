@@ -48,8 +48,9 @@ PROJECT := MMTeamAlpha2Build
 
 # add objects here as you write them
 # OBJECTS += lib/QEI.o
-OBJECTS += driver/serial.o 
+OBJECTS += driver/serial.o
 OBJECTS += driver/motors.o
+OBJECTS += driver/encoders.o
 OBJECTS += driver/LED.o
 OBJECTS += algorithm/movement_states.o
 OBJECTS += main.o
