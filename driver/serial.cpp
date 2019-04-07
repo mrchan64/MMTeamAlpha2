@@ -19,7 +19,7 @@ Serial comm( PC_10, PC_11, BAUDRATE );
  * Description: 	Sends a message to the device
  * Parameters: 		sends message to serial communicator
  ***********************************************************************/
-void deviceMessage(  char message[] ){
+void deviceMessage(  char* message ){
 
 	comm.printf( message );
 }

@@ -8,11 +8,11 @@
 
 #include "mbed.h"
 #include "driver/serial.hpp"
-#include "driver/motors.hpp"
-#include "driver/LED.hpp"
-#include "algorithm/movement_states.hpp"
+// #include "driver/motors.hpp"
+// #include "driver/LED.hpp"
+// #include "algorithm/movement_states.hpp"
 
-extern MOVEMENT_STATE movementState;
+// extern MOVEMENT_STATE movementState;
 
 int main() {
   // poll
@@ -21,5 +21,10 @@ int main() {
 
   // algorithm states
 
-  runMovementStates();
+  // runMovementStates();
+
+  while(true) {
+    deviceMessage((char*) "Hello world!\n");
+    wait_ms(1000);
+  }
 }

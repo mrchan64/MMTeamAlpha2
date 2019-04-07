@@ -18,7 +18,7 @@ const int BAUDRATE = 115200;
 /**
  * Sends a messge to the device at a given baudrate
  */
-void deviceMessage( char message[] );
+void deviceMessage( char* message );
 
 /**
  * Updates the baudrate on the serial Communicator
