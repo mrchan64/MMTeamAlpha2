@@ -25,4 +25,14 @@ int main() {
   runMovementStates();
 
   resetEncoders();
+  // runMovementStates();
+
+  initMotors();
+
+  setMotorL(0.2f);
+  setMotorR(0.2f);
+  while(true) {
+    deviceMessage();
+    wait_ms(1000);
+  }
 }

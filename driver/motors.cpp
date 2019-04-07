@@ -11,10 +11,22 @@
  #include "mbed.h"
  #include "motors.hpp"
 
-AnalogOut motorL1(MOTOR_L1_PIN);
-AnalogOut motorL2(MOTOR_L2_PIN);
-AnalogOut motorR1(MOTOR_R1_PIN);
-AnalogOut motorR2(MOTOR_R2_PIN);
+PwmOut motorL1(MOTOR_L1_PIN);
+PwmOut motorL2(MOTOR_L2_PIN);
+PwmOut motorR1(MOTOR_R1_PIN);
+PwmOut motorR2(MOTOR_R2_PIN);
+
+void initMotors() {
+  motorL1.period_us(PERIOD_US);
+  motorL2.period_us(PERIOD_US);
+  motorR1.period_us(PERIOD_US);
+  motorR2.period_us(PERIOD_US);
+
+  motorL1.write(0);
+  motorL2.write(0);
+  motorR1.write(0);
+  motorR2.write(0);
+}
 
 void setMotorL(float input) {
   if (input > 0) {
