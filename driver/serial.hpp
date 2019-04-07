@@ -13,9 +13,16 @@
 #ifndef SERIAL_H
 #define SERIAL_H
 
+const int BAUDRATE = 115200;
+
 /**
  * Sends a messge to the device at a given baudrate
  */
-void deviceMessage( int baudrate, char message[] );
+void deviceMessage( char message[] );
+
+/**
+ * Updates the baudrate on the serial Communicator
+ */
+void setBaud( int baudrate );
 
 #endif

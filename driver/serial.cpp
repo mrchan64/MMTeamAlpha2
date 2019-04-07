@@ -11,24 +11,26 @@
 #include "mbed.h"
 #include "serial.hpp"
 
-Serial comm( PC_10, PC_11 );
+Serial comm( PC_10, PC_11, BAUDRATE );
 
 /************************************************************************
  *
  * Name: 		deviceMessage
- * Description: 	Sends a message to the device at a given baudrate
- * Parameters: 		baudrate: if 0, defaults to 9600, else sets to 
- * 			given. Represents tranfer of bits per second
- *			message: message to send to the device
+ * Description: 	Sends a message to the device
+ * Parameters: 		sends message to serial communicator
  ***********************************************************************/
-void deviceMessage( int baudrate, char message[] ){
+void deviceMessage(  char message[] ){
 
-	//Checks for defualt case
-	if( baudrate != 0 ){
-
-		comm.baud( baudrate );
-	}
-	
 	comm.printf( message );
 }
 
+/************************************************************************
+ *
+ * Name: 		setBaud
+ * Description:   Sets the baudrate of the serial communicator
+ * Parameters: 		baudrate: default is 9600,changes to given input
+ ***********************************************************************/
+void setBaud( int baudrate ) {
+
+		comm.baud( baudrate );
+}
