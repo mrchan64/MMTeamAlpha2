@@ -25,8 +25,4 @@ int main() {
   runMovementStates();
 
   resetEncoders();
-
-  getPulseCountLeft();
-
-  getPulseCountRight();
 }
