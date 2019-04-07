@@ -14,6 +14,7 @@
 #define SERIAL_H
 
 const int BAUDRATE = 115200;
+extern Serial comm;
 
 /**
  * Sends a messge to the device at a given baudrate
