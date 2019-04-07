@@ -13,7 +13,7 @@
 #ifndef MOTORS_H
 #define MOTORS_H
 
-const int PERIOD_US = 50;
+const int PERIOD_US = 200;
 
 void initMotors();
 

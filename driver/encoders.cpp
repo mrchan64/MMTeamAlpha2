@@ -11,8 +11,8 @@
 #include "mbed.h"
 #include "encoders.hpp"
 
-int pulseCountLeft;
-int pulseCountRight;
+long pulseCountLeft;
+long pulseCountRight;
 
 InterruptIn encoderLeftA(ENC_L_A_PIN);
 InterruptIn encoderLeftB(ENC_L_B_PIN);
@@ -26,10 +26,7 @@ void resetEncoders() {
 
 void resetEncoderLeft() {
   pulseCountLeft = 0;
-  encoderLeftA.rise(&riseLeftA);
-  encoderLeftA.fall(&fallLeftA);
-  encoderLeftB.rise(&riseLeftB);
-  encoderLeftB.fall(&fallLeftB);
+  encoderLeftA.rise(&riseLeftA);\
 }
 
 void riseLeftA() {
@@ -39,37 +36,13 @@ void riseLeftA() {
     pulseCountLeft--;
 }
 
-void fallLeftA() {
-  if (encoderLeftB == 0)
-    pulseCountLeft++;
-  else if (encoderLeftB == 1)
-    pulseCountLeft--;
-}
-
-void riseLeftB() {
-  if (encoderLeftA == 0)
-    pulseCountLeft++;
-  else if (encoderLeftA == 1)
-    pulseCountLeft--;
-}
-
-void fallLeftB() {
-  if (encoderLeftA == 1)
-    pulseCountLeft++;
-  else if (encoderLeftA == 0)
-    pulseCountLeft--;
-}
-
-int getPulseCountLeft() {
+long getPulseCountLeft() {
   return pulseCountLeft;
 }
 
 void resetEncoderRight() {
   pulseCountRight = 0;
   encoderRightA.rise(&riseRightA);
-  encoderRightA.fall(&fallRightA);
-  encoderRightB.rise(&riseRightB);
-  encoderRightB.fall(&fallRightB);
 }
 
 void riseRightA() {
@@ -79,27 +52,6 @@ void riseRightA() {
     pulseCountRight--;
 }
 
-void fallRightA() {
-  if (encoderRightB == 0)
-    pulseCountRight++;
-  else if (encoderRightB == 1)
-    pulseCountRight--;
-}
-
-void riseRightB() {
-  if (encoderRightA == 0)
-    pulseCountRight++;
-  else if (encoderRightA == 1)
-    pulseCountRight--;
-}
-
-void fallRightB() {
-  if (encoderRightA == 1)
-    pulseCountRight++;
-  else if (encoderRightA == 0)
-    pulseCountRight--;
-}
-
-int getPulseCountRight() {
+long getPulseCountRight() {
   return pulseCountRight;
 }

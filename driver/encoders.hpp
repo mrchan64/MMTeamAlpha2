@@ -40,8 +40,8 @@
 #ifndef ENCODERS_H
 #define ENCODERS_H
 
-extern int pulseCountLeft;   // pulse count for the left encoder
-extern int pulseCountRight;  // pulse count for the right encoder
+extern long pulseCountLeft;   // pulse count for the left encoder
+extern long pulseCountRight;  // pulse count for the right encoder
 
 // Reset the count of both left and right encoders
 void resetEncoders();
@@ -52,17 +52,8 @@ void resetEncoderLeft();
 // Update left pulse count when channel A rises
 void riseLeftA();
 
-// Update left pulse count when channel A falls
-void fallLeftA();
-
-// Update left pulse count when channel B rises
-void riseLeftB();
-
-// Update left pulse count when channel B falls
-void fallLeftB();
-
 // Returns the pulse count of the left encoder
-int getPulseCountLeft();
+long getPulseCountLeft();
 
 // Reset the count of the right encoder
 void resetEncoderRight();
@@ -70,16 +61,7 @@ void resetEncoderRight();
 // Update right pulse count when channel A rises
 void riseRightA();
 
-// Update right pulse count when channel A falls
-void fallRightA();
-
-// Update right pulse count when channel B rises
-void riseRightB();
-
-// Update right pulse count when channel B falls
-void fallRightB();
-
 // Reset the pulse count of the right encoder
-int getPulseCountRight();
+long getPulseCountRight();
 
 #endif

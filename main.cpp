@@ -5,6 +5,8 @@
  ***************************************************/
 
 // AUTHOR: Matthew Chan
+#include <string>
+using namespace std;
 
 #include "mbed.h"
 #include "driver/serial.hpp"
@@ -15,24 +17,31 @@
 
 extern MOVEMENT_STATE movementState;
 
+
 int main() {
-  // poll
+  // poll/
 
   // check pause
 
   // algorithm states
 
-  runMovementStates();
+  //runMovementStates();
 
-  resetEncoders();
-  // runMovementStates();
-
+  wait_ms(1000);
   initMotors();
+  resetEncoders();
 
-  setMotorL(0.2f);
-  setMotorR(0.2f);
+  setMotorL(0.01f);
+  setMotorR(0.01f);
   while(true) {
-    deviceMessage();
-    wait_ms(1000);
+
+    //comm.printf("%d\n\r",getPulseCountLeft() - getPulseCountRight());
+    if( getPulseCountLeft() > 1024 ){
+
+      setMotorL(0.0f);
+      setMotorR(0.0f);
+      comm.printf("%d %d\n\r",getPulseCountLeft(), getPulseCountRight());
+    }
+    //wait_ms(1000);
   }
 }
