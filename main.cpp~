@@ -7,8 +7,8 @@
 // AUTHOR: Matthew Chan
 
 #include "mbed.h"
-#include "driver/infrared.hpp"
-#include "states/moving_state.hpp"
+#include "infrared.hpp"
+#include "moving_state.hpp"
 
 int main() {
 
