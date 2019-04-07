@@ -13,4 +13,12 @@
 #ifndef MOTORS_H
 #define MOTORS_H
 
+const int PERIOD_US = 50;
+
+void initMotors();
+
+void setMotorL(float input);
+
+void setMotorR(float input);
+
 #endif
