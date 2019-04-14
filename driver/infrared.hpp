@@ -34,6 +34,6 @@ name: getIRValues
 Description: Returns the value of the sensor specified.
 Parameters:  sensor: The sensor whose value you want to.
 **********************************************************************/
-double getIRValue( int sensor);
+float getIRValues( int sensor);
 
 #endif

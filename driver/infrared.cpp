@@ -10,22 +10,23 @@
 
 #include "mbed.h"
 #include "infrared.hpp"
+#include "pinnames.hpp"
 
 //Left Sensors, Sensor 1.
-DigitalOut IR_LED_L(PC_5);
-AnalogIn IR_REC_L(PC_3);
+DigitalOut IR_LED_L(IR_LED_L_PIN);
+AnalogIn IR_REC_L(IR_REC_L_PIN);
 
 //Front Left Sensors, Sensor 2.
-DigitalOut IR_LED_FL(PC_4);
-AnalogIn IR_REC_FL(PC_2);
+DigitalOut IR_LED_FL(IR_LED_FL_PIN);
+AnalogIn IR_REC_FL(IR_REC_FL_PIN);
 
 //Right Sensors, Sensor 3.
-DigitalOut IR_LED_R(PA_10);
-AnalogIn IR_REC_R(PC_0);
+DigitalOut IR_LED_R(IR_LED_R_PIN);
+AnalogIn IR_REC_R(IR_REC_R_PIN );
 
 //Front Right Sensors, Sensor 4.
-DigitalOut IR_LED_FR(PA_11);
-AnalogIn IR_REC_FR(PC_1);
+DigitalOut IR_LED_FR(IR_LED_FR_PIN);
+AnalogIn IR_REC_FR(IR_REC_FR_PIN );
 
 void setIr( int sensor, int state ){
 
@@ -58,7 +59,7 @@ void allOn( int state ){
   IR_LED_FR = state;
 }
 
-double getIRValues( int sensor ){
+float getIRValues( int sensor ){
 
   switch(sensor){
 
@@ -71,11 +72,11 @@ double getIRValues( int sensor ){
     break;
 
     case 3:
-    return IR_REC_R;
+    return IR_REC_FR;
     break;
 
     case 4:
-    return IR_REC_FR;
+    return IR_REC_R;
     break;
   }
 

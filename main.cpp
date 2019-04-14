@@ -9,8 +9,8 @@
 using namespace std;
 
 #include "mbed.h"
-#include "driver/infrared.hpp"
-#include "states/moving_state.hpp"
+//#include "driver/infrared.hpp"
+//#include "states/moving_state.hpp"
 #include "driver/serial.hpp"
 #include "driver/motors.hpp"
 #include "driver/encoders.hpp"
@@ -28,22 +28,19 @@ int main() {
   // algorithm states
 
   //runMovementStates();
-
+  comm.printf( "Hello Word");
   wait_ms(1000);
   initMotors();
   resetEncoders();
+  comm.printf( "Hello Word");
 
-  setMotorL(0.01f);
-  setMotorR(0.01f);
-  while(true) {
+  /*while(true) {
 
-    //comm.printf("%d\n\r",getPulseCountLeft() - getPulseCountRight());
-    if( getPulseCountLeft() > 1024 ){
+    allOn(1);
+    wait_us(50);
+    comm.printf("%f %f %f %f\n\r",getIRValues(1),getIRValues(2),getIRValues(3),getIRValues(4));
+    allOn(0);
+    wait_ms(1000);
 
-      setMotorL(0.0f);
-      setMotorR(0.0f);
-      comm.printf("%d %d\n\r",getPulseCountLeft(), getPulseCountRight());
-    }
-    //wait_ms(1000);
-  }
+  }*/
 }
