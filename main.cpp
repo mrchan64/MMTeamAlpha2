@@ -9,6 +9,8 @@
 using namespace std;
 
 #include "mbed.h"
+#include "driver/infrared.hpp"
+#include "states/moving_state.hpp"
 #include "driver/serial.hpp"
 #include "driver/motors.hpp"
 #include "driver/encoders.hpp"
