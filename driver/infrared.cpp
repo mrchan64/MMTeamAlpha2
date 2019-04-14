@@ -41,11 +41,11 @@ void setIr( int sensor, int state ){
     break;
 
     case 3:
-    IR_LED_R = state;
+    IR_LED_FR = state;
     break;
 
     case 4:
-    IR_LED_FR = state;
+    IR_LED_R = state;
     break;
 
   }
@@ -64,7 +64,7 @@ float getIRValues( int sensor ){
   switch(sensor){
 
     case 1:
-    return IR_REC_L;
+    return IR_REC_L.read(); // fix later
     break;
 
     case 2:

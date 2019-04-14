@@ -40,10 +40,10 @@ const PinName IR_REC_L_PIN 		= PC_3;
 const PinName IR_LED_FL_PIN		= PC_4;
 const PinName IR_REC_FL_PIN 	= PC_2;
 //R
-const PinName IR_LED_R_PIN 		= PC_10;
+const PinName IR_LED_R_PIN 		= PA_10;
 const PinName IR_REC_R_PIN 		= PC_0;
 //FR
-const PinName IR_LED_FR_PIN		= PC_11;
+const PinName IR_LED_FR_PIN		= PA_11;
 const PinName IR_REC_FR_PIN 	= PC_1;
 
 //SERIAL COMM --------------------------------------------

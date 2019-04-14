@@ -9,15 +9,15 @@
 using namespace std;
 
 #include "mbed.h"
-//#include "driver/infrared.hpp"
+#include "driver/infrared.hpp"
 //#include "states/moving_state.hpp"
 #include "driver/serial.hpp"
 #include "driver/motors.hpp"
 #include "driver/encoders.hpp"
 #include "driver/LED.hpp"
-#include "algorithm/movement_states.hpp"
+//#include "algorithm/movement_states.hpp"
 
-extern MOVEMENT_STATE movementState;
+// extern MOVEMENT_STATE movementState;
 
 
 int main() {
@@ -28,19 +28,22 @@ int main() {
   // algorithm states
 
   //runMovementStates();
-  comm.printf( "Hello Word");
+  comm.printf( "Hello World\n\r");
   wait_ms(1000);
   initMotors();
   resetEncoders();
-  comm.printf( "Hello Word");
+  comm.printf( "Hello World\n\r");
 
-  /*while(true) {
+  while(true) {
 
-    allOn(1);
-    wait_us(50);
-    comm.printf("%f %f %f %f\n\r",getIRValues(1),getIRValues(2),getIRValues(3),getIRValues(4));
-    allOn(0);
-    wait_ms(1000);
+    setIr( 1, 1);
+    wait_us(500);
+    comm.printf("IR front left: %f \n\r",getIRValues(1));
+    // comm.printf("%f \n\r",getIRValues(1));
+    // comm.printf("%f \n\r",getIRValues(1));
+    // comm.printf("%f \n\r",getIRValues(1));
+    setIr( 1, 0 );
+    wait_ms(500);
 
-  }*/
+  }
 }

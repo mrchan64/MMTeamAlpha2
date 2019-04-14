@@ -52,9 +52,9 @@ OBJECTS += driver/motors.o
 OBJECTS += driver/encoders.o
 OBJECTS += driver/LED.o
 #OBJECTS += algorithm/movement_states.o
-OBJECTS += main.o
 OBJECTS += driver/infrared.o
-OBJECTS += states/moving_state.o
+#OBJECTS += states/moving_state.o
+OBJECTS += main.o
 
  SYS_OBJECTS += mbed/TARGET_NUCLEO_F446RE/TOOLCHAIN_GCC_ARM/hal_tick_overrides.o
  SYS_OBJECTS += mbed/TARGET_NUCLEO_F446RE/TOOLCHAIN_GCC_ARM/PeripheralPins.o
