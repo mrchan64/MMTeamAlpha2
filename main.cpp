@@ -18,7 +18,8 @@ using namespace std;
 // #include "algorithm/movement_states.hpp"
 
 // extern MOVEMENT_STATE movementState;
-
+const float LO = -0.01f;
+const float HI = 0.01f;
 
 int main() {
   comm.printf("UPLOADED\n\r");
@@ -27,41 +28,39 @@ int main() {
   initMotors();
   resetEncoders();
 
-  setMotorL(0.1f);
-  setMotorR(0.1f);
-
-  int targetDist = 400000;
+  int pollRate = 200;
+  long targetSpeed = 3000;
   while(true) {
-    int leftDist = getPulseCountLeft();
-    int rightDist = getPulseCountRight();
+    long leftSpeed = getPulseCountLeft() / pollRate;
+    long rightSpeed = getPulseCountRight() / pollRate;
 
-    comm.printf("LEFT: %d\n\r", leftDist);
-    comm.printf("RIGHT: %d\n\r", rightDist);
-    comm.printf("DIFF: %d\n\r", rightDist - leftDist);
-    comm.printf("\%DIFF: %f\%\n\r", (rightDist - leftDist) / (float) targetDist * 100);
+    comm.printf("LEFT: %d\n\r", leftSpeed);
+    comm.printf("RIGHT: %d\n\r", rightSpeed);
+    comm.printf("DIFF: %d\n\r", leftSpeed - rightSpeed);
+    comm.printf("PERCENT_DIFF: %d\n\r", (int) ((leftSpeed - rightSpeed) / (float) targetSpeed * 100));
 
-    float speedL = (targetDist - leftDist) * 0.000001f;
-    float speedR = (targetDist - rightDist) * 0.000001f;
+    float powerL = (targetSpeed - leftSpeed) * 0.00005f;
+    float powerR = (targetSpeed - rightSpeed) * 0.00005f;
 
-    if (speedL > 0.5f)
-      speedL = 0.5f;
-    else if (speedL < 0.0f)
-      speedL = 0.0f;
+    if (powerL > 0.5f)
+      powerL = 0.5f;
+    else if (powerL < -0.5f)
+      powerL = -0.5f;
 
-    if (speedR > 0.5f)
-    speedR = 0.5f;
-    else if (speedR < 0.0f)
-      speedR = 0.0f;
+    if (powerR > 0.5f)
+    powerR = 0.5f;
+    else if (powerR < -0.5f)
+      powerR = -0.5f;
 
-    comm.printf("LSPD: %f\n\r", speedL);
-    comm.printf("RSPD: %f\n\r", speedR);
+    comm.printf("LPOW: %f\n\r", powerL);
+    comm.printf("RPOW: %f\n\r", powerR);
     comm.printf("\n\r");
 
-    setMotorL(speedL);
-    setMotorR(speedR);
+    setMotorL(powerL + LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO))));
+    setMotorR(powerR + LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(HI-LO))));
 
     resetEncoders();
 
-    wait_ms(100);
+    wait_ms(pollRate);
   }
 }
