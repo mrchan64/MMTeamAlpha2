@@ -16,15 +16,21 @@
 // MOTORS -------------------------------------------------
 const PinName MOTOR_L1_PIN		= PA_2;
 const PinName MOTOR_L2_PIN		= PA_3;
-const PinName MOTOR_R1_PIN		= PB_6;
-const PinName MOTOR_R2_PIN		= PB_7;
+const PinName MOTOR_R1_PIN		= PB_7;
+const PinName MOTOR_R2_PIN		= PB_6;
+
+// ENCODERS -----------------------------------------------
+const PinName ENC_L_A_PIN     = PA_4;
+const PinName ENC_L_B_PIN     = PA_5;
+const PinName ENC_R_A_PIN     = PC_9;
+const PinName ENC_R_B_PIN     = PC_8;
 
 //LEDS ----------------------------------------------------
 const PinName LED_1_PIN			  = PB_12;
 const PinName LED_2_PIN			  = PB_13;
 const PinName LED_3_PIN			  = PB_14;
 const PinName LED_4_PIN			  = PB_15;
-const PinName LED_5_PIN			  = PB_6;
+const PinName LED_5_PIN			  = PC_6;
 
 //INFRARED ------------------------------------------------
 //L
