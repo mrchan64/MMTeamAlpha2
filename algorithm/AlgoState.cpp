@@ -63,8 +63,8 @@ void AlgoState::addWall(int r, int c, int dir) {
 void AlgoState::floodFill() {
 	/*let stack = stack of points to be processed // can also use queue, same results
 		push current mouse position on stack
-		while stack not empty:
-	let cur = pop top element of stack
+	while stack not empty:
+		let cur = pop top element of stack
 		mark cur as processed
 		if dist(cur) == 0 skip to next // don't want to update end goal with a non-zero distance!
 		let shortest = +infinity // signify "not set"/invalid path
@@ -81,26 +81,36 @@ void AlgoState::floodFill() {
 	stack<pair<int, int>> st;
 	pair<int, int> startLoc(15, 0);
 	st.push(startLoc);
-
+	int count = 0;
 	while (!st.empty()) {
+		count++;
 		AlgoState::printVisited();
 		pair<int, int> cur = st.top();
-		cout << cur.first << endl;
-		cout << cur.second << endl;
 		st.pop();
-		visited[cur.first][cur.second] = 1;
-		if (!dist[cur.first][cur.second]) continue; //check if dist == 0 
 
+		//mark cur as processed
+		visited[cur.first][cur.second] = 1;
+
+		//if dist(cur) == 0 skip to next // don't want to update end goal with a non-zero distance!
+		if (!dist[cur.first][cur.second]) continue;  
+
+		//let shortest = +infinity // signify "not set"/invalid path
 		int shortest = 100;
+
+
+		pair<int, int> nextBest;
 	
+		//check all neighbors and add neighbor if not visited 
 		//check north 
 		if (checkInMap(cur.first - 1, cur.second)) {
 			cout << "up" << endl;
 			int nr = cur.first - 1;
 			int nc = cur.second;
 			if (!ns_walls[nr][nc]) {
-				if (dist[nr][nc] < shortest)
+				if (dist[nr][nc] < shortest) {
 					shortest = dist[nr][nc];
+					nextBest = { nr, nc };
+				}
 				if (!visited[nr][nc])
 					st.push(pair<int, int> (nr, nc));
 			}
@@ -111,8 +121,10 @@ void AlgoState::floodFill() {
 			int nr = cur.first + 1;
 			int nc = cur.second;
 			if (!ns_walls[cur.first][cur.second]) {
-				if (dist[nr][nc] < shortest)
+				if (dist[nr][nc] < shortest) {
 					shortest = dist[nr][nc];
+					nextBest = { nr, nc };
+				}
 				if (!visited[nr][nc])
 					st.push(pair<int, int> (nr, nc));
 			}
@@ -123,8 +135,10 @@ void AlgoState::floodFill() {
 			int nr = cur.first;
 			int nc = cur.second - 1;
 			if (!ew_walls[nr][nc]) {
-				if (dist[nr][nc] < shortest)
+				if (dist[nr][nc] < shortest) {
 					shortest = dist[nr][nc];
+					nextBest = { nr, nc };
+				}
 				if (!visited[nr][nc])
 					st.push(pair<int, int> (nr, nc));
 			}
@@ -135,21 +149,26 @@ void AlgoState::floodFill() {
 			int nr = cur.first;
 			int nc = cur.second + 1;
 			if (!ew_walls[nr][nc]) {
-				if (dist[nr][nc] < shortest)
+				if (dist[nr][nc] < shortest) {
 					shortest = dist[nr][nc];
+					nextBest = { nr, nc };
+				}
 				if (!visited[nr][nc])
 					st.push(pair<int, int> (nr, nc));
 			}
 		}
-		cout << endl;
+		//check all neighbors and add neighbor if not visited 
+
+		cout << shortest << endl;
+		cout << nextBest.first << " " << nextBest.second << endl;
+		st.push(nextBest);
 
 		if (shortest == 100) continue;
 		else if (dist[cur.first][cur.second] == shortest + 1) continue;
-		else {
-			dist[cur.first][cur.second] = shortest + 1;
-		}
 
-		if (checkInMap(cur.first-1, cur.second)) {
+		dist[cur.first][cur.second] = shortest + 1;
+
+		/*if (checkInMap(cur.first-1, cur.second)) {
 			st.push(pair<int, int> (cur.first-1, cur.second));
 		}
 		if (checkInMap(cur.first, cur.second-1)) {
@@ -160,8 +179,10 @@ void AlgoState::floodFill() {
 		}
 		if (checkInMap(cur.first, cur.second+1)) {
 			st.push(pair<int, int> (cur.first, cur.second+1));
-		}
+		}*/
 	}
+	AlgoState::printVisited();
+	AlgoState::printDist();
 }
 
 bool AlgoState::checkInMap(int r, int c) {
